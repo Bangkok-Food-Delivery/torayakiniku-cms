@@ -1,0 +1,67 @@
+[CONTACT_FORM_FIELD_EMAIL]
+  other = "電子郵件"
+[CONTACT_FORM_FIELD_PHONE]
+  other = "電話號碼"
+[CONTACT_FORM_FIELD_SERVICES]
+  other = "Services"
+[CONTACT_FORM_FIELD_MESSAGE]
+  other = "信息"
+[CONTACT_FORM_FIELD_FULL_NAME]
+  other = "FULL Name"
+[CONTACT_FORM_FIELD_FIRST_NAME]
+  other = "名字"
+[CONTACT_FORM_FIELD_LAST_NAME]
+  other = "姓氏"
+[CONTACT_FORM_FIELD_ZIPCODE]
+  other = "ZIPCODE"
+[CONTACT_FORM_FIELD_ADDRESS]
+  other = "ADDRESS"
+[CONTACT_FORM_SUBMIT_SEND_MESSAGE]
+  other = "確認訂位"
+[CONTACT_FORM_FIELD_AGREED]
+  other = "I have agreed to"
+[CONTACT_FORM_FIELD_PAGE]
+  other = "privacy-policy"
+[CHOOSE_SERVICE_SECTION_TITLE]
+  other = "Choose A Branch"
+[CHOOSE_DATE_SECTION_TITLE]
+  other = "Choose Date & Time"
+[PAYMENT_SECTION_TITLE]
+  other = "PAYMENT"
+[MORNING]
+  other = "MORNING"
+[AFTERNOON]
+  other = "AFTERNOON"
+[EVENING]
+  other = "EVENING"
+[ADD_INFORMATION_SECTION_TITLE]
+  other = "Booking Information"
+[CARD_NUMBER]
+  other = "CARD NUMBER"
+[CARD_NAME]
+  other = "CARD NAME"
+[EXPIRY_DATE]
+  other = "EXPIRY DATE"
+[CVC]
+  other = "CVC"
+[CVC_HELP]
+  other = "CVC NUMBER IS BEHIND YOUR CARD"
+[BOOKING_FORM_FIELD_FULL_NAME]
+  other = "Full Name"
+[BOOKING_FORM_FIELD_NUMBER_OF_PEOPLE]
+  other = "Number of people"
+[BOOKING_FORM_FIELD_EMAIL]
+  other = "Email"
+[BOOKING_FORM_FIELD_PHONE]
+  other = "Phone Number"
+[BOOKING_FORM_FIELD_REQUIREMENTS]
+  other = "Requirements"
+[BOOKING_FORM_FIELD_REQUIREMENTS_PLACEHOLDER]
+  other = "Example: Allergies or special occasion"
+[footer_link1_title]
+  other = "菜单"
+[footer_link2_title]
+  other = "電話聯繫我們"
+[delivery_button]
+  other = "现在下单"
+

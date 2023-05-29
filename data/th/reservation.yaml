@@ -1,0 +1,23 @@
+reservation:
+  title: Reservations
+  service_item:
+    - title: The City Connect
+      value: 1
+      description: "TORA YAKINIKU x CAFE is a modern buffet-style yakiniku restaurant in Room No. 55/88-89 at The City Connect Kanlapaphruek Project. Opened in 2015, has 14 tables, and can accommodate up to 60 guests. We are conveniently located a short drive from BTS Wutthakat and BTS Bang Wa stations."
+    - title: Laselle's Avenue
+      value: 2
+      description: "TORA YAKINIKU x CAFE's Lasalle Avenue branch is a modern buffet-style yakiniku restaurant in building no. D001 - D003. Opened in 2018, has 18 tables, and can accommodate up to 80 guests. We are conveniently located near BTS Bearing station, just 10 minutes away by public transport."  
+    - title: Crystal Design Center
+      value: 3
+      description: "TORA YAKINIKU x CAFE's third branch is a modern buffet-style yakiniku restaurant in Building L 4, Room No. 1001-1004, located in the Crystal Design Center. It opened in 2022, has 14 tables, and can accommodate up to 60 guests. CDC is conveniently located off the Ram Inthra expressway."  
+  afternoon_timings:
+    - time: 11:00 - 13:00
+      value: 4
+    - time: 14:00 - 16:00
+      value: 5
+  evening_timings:
+    - time: 17:00 - 19:00
+      value: 6
+    - time: 20:00 - 22:00
+      value: 7
+  

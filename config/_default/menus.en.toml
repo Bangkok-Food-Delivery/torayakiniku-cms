@@ -1,0 +1,57 @@
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "About"
+url = "about/"
+weight = 2
+
+
+# [[main]]
+# name = "Menu"
+# url = "menu/"
+# weight = 2
+
+[[main]]
+name = "Promotion"
+url = "promotions/"
+weight = 3
+
+[[main]]
+name = "Events"
+url = "events/"
+weight = 4
+
+[[main]]
+identifier = "branches"
+name = "Branches"
+url = "#"
+weight = 5
+
+[[main]]
+name = "THE CITY CONNECT"
+url = "city-connect/"
+parent = "branches"
+weight = 1
+
+[[main]]
+name = "LASELLE'S AVENUE"
+url = "lasalle-avenue/"
+parent = "branches"
+weight = 2
+
+[[main]]
+name = "CRYSTAL DESIGN CENTER"
+url = "crystal-design-center/"
+parent = "branches"
+weight = 3
+
+[[main]]
+name = "Reservations"
+identifier = "reservations"
+url = "contact/"
+weight = 6
+

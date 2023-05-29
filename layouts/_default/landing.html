@@ -1,0 +1,205 @@
+{{ define "main"}}
+
+{{with .Params.hero_section}}
+{{if.enable}}
+<!-- main hero start -->
+<section class="hero hero-fullscreen jarallax" data-speed="0.2" style="min-height: calc(100vh - 140px)">
+    <div class="hero-background">
+        <img src="{{ .bg_img }}" alt="hero background" class="jarallax-img"/>
+        <video src=""></video>
+        <div class="hero-background-overlay" style="background-color: rgba(0,0,0,.25)"></div>
+    </div>
+    <div class="hero-foreground hero-foreground-gradient-black-left d-flex flex-column justify-content-center justify-content-md-end">
+        <div class="container text-white py-14 py-md-23 py-lg-25 text-center text-md-left">
+            <small class="fs-2 font-family-secondary text-uppercase font-weight-bold letter-spacing-caption">
+                {{ .hero_sm_text }}
+            </small>
+            <h1 class="fs-10 fs-lg-11 font-weight-bold mt-10 mb-16">
+                {{ .hero_text }}<br/>{{ .hero_location }}
+            </h1>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
+                {{with .hero_button}}
+                {{if.enable}}
+                <a href="{{ .btn1_link }}" class="btn btn-primary btn-lg">{{ .btn1 }}</a>
+                <a href="{{ .btn2_link }}" class="btn btn-ghost btn-lg border-0">{{ .btn2 }}</a>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+<div id="hero-end-anchor"></div>
+<!-- main hero end -->
+{{ end }}
+{{ end }}
+
+
+{{ with .Params.about_section }}
+{{if.enable}}
+<!-- "about" section start -->
+<section class="section" id="about">
+    <div class="section-content container text-center">
+        <h2 class="mb-0">{{ .title }}</h2>
+        <div class="row no-gutters mt-6 mt-md-10 mt-lg-17">
+            <div class="col-12 col-lg-10 offset-0 offset-lg-1">
+                <p>{{ .description }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-content container mt-20">
+        <div class="swiper mySwiper image-slider">
+            <div class="swiper-wrapper">
+                {{ range .gallery_items }}
+                <div class="swiper-slide" style="cursor: grabbing;">
+                    <img src="{{ . }}" alt="image" class="image-slider-item" height="600" />
+                </div>
+                {{end}}
+            </div>
+            <a class="image-slider-next d-none d-md-flex" style="cursor: pointer !important; user-select: none;">
+                <i class="material-icons">arrow_forward</i>
+            </a>
+            <a class="image-slider-prev d-none d-md-flex" style="cursor: pointer !important; user-select: none;">
+                <i class="material-icons">arrow_back</i>
+            </a>
+        </div>
+    </div>
+    {{ with .about_details }}
+    {{if.enable}}
+    <div class="section-content container py-19 py-lg-20">
+        <div class="row vertical-divider-light">
+            {{ range .detail_item }}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card border-0">
+                    <div class="card-body py-17 px-10 text-center">
+                        <div class="card-icon mb-6"><i class="material-icons">{{ .icon }}</i></div>
+                        <div class="fs-1 lh-1 my-5 font-family-secondary text-uppercase font-weight-bold letter-spacing-caption text-muted">
+                            {{ .title }}
+                        </div>
+                        <p class="mb-0 text-body">{{ .description }}</p>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</section>
+<!-- "about" section end -->
+{{ end }}
+{{ end }}
+
+
+
+{{ with .Params.menu_section }}
+{{if.enable}}
+<!-- "our work" section start -->
+<section class="section bg-secondary" id="our-work">
+    <div class="section-content text-center container">
+        <div class="d-flex justify-content-center justify-content-md-between align-items-end">
+            <div class="text-center text-md-left">
+                <h2>{{ .heading }}</h2>
+            </div>
+        </div>
+        <div class="shuffle-grid shuffle-grid-gap-14 shuffle-grid-cols-1 shuffle-grid-cols-md-2 shuffle-grid-cols-xl-4 mt-14" id="projects-grid">
+            {{ range .menu_items }}
+            <div class="shuffle-grid-item" data-groups="makeup">
+                <div class="card card-square bg-transparent border-0">
+                    <div class="card-bg" style="background-image: url({{ . }})"></div>
+                    <!-- <div class="card-bg card-bg-hover" style="background-color: rgba(0,0,0,.6)"></div>
+                    <div class="card-body card-body-hover text-white d-flex align-items-center justify-content-center">
+                        <i class="material-icons fs-8">zoom_in</i>
+                    </div> -->
+                    <!-- <a href="#" class="card-link-overlay"></a> -->
+                </div>
+            </div>
+            {{end}}
+        </div>
+        <div class="d-flex justify-content-center justify-content-md-between align-items-end mt-20">
+            <div class="text-center text-md-left">
+                <p class="text-center">{{ .description }}</p>
+            </div>
+        </div>
+        {{ with .menu_btn }}
+        {{if.enable}}
+        <a href="{{ .link }}" class="btn btn-primary btn-lg mt-20">{{ .title }}</a>
+        {{ end }}
+        {{ end }}
+    </div>
+</section>
+<!-- "our work" section end -->
+{{ end }}
+{{ end }}
+
+{{ with .Params.delivery_section }}
+{{ if.enable }}
+<!-- "about" section start -->
+<section class="section" id="about">
+    <div class="section-content container text-center">
+        <!-- <small class="fs-1 font-family-secondary text-uppercase font-weight-bold letter-spacing-caption text-muted">
+            general contractors in new york
+        </small> -->
+        <h2 class="mb-0">{{.title}}</h2>
+        <div class="row no-gutters mt-6 mt-md-10 mt-lg-17">
+            <div class="col-12 col-lg-10 offset-0 offset-lg-1">
+                <p>{{ .description }}</p>
+            </div>
+            
+        </div>
+        <div>
+            <a href="https://tora.foodie-delivery.com/#/home" class="btn btn-primary btn-lg mt-20" target=“_blank” >{{ i18n "delivery_button" .}}</a>
+        </div>
+        <div class="row mt-6 mt-md-10 mt-lg-17 vertical-divider-light">
+            {{ range .rating_item }}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card border-0">
+                    <div class="card-body py-17 px-10 d-flex flex-column align-items-center">
+                        <div class="card-icon mb-6">
+                            <img src="{{.icon}}" alt="yelp icon" width="45">
+                        </div>
+                        <div class="fs-1 lh-1 mb-5 font-family-secondary text-uppercase font-weight-bold letter-spacing-caption text-muted">
+                            {{ .title }}
+                        </div>
+                        <div class="star-rating">
+                            {{ range .stars }}
+                            <i class="material-icons">{{.}}</i>
+                            {{end}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</section>
+<!-- "about" section end -->
+{{ end }}
+{{ end }}
+
+{{ with .Params.maps }}
+{{ if.enable }}
+<!-- "map" section start -->
+<section class="gmap">
+    <div class="gmap-embed" data-parallax-speed="0">
+        {{if.location1}}
+        <div>
+            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15504.822275260589!2d100.447107!3d13.705996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2981b13e0d29b%3A0xdc30861c5ec3bd4b!2sTora%20Yakiniku%20x%20Caf%C3%A9!5e0!3m2!1sen!2sth!4v1681010066600!5m2!1sen!2sth"></iframe></div>
+        </div>
+        {{end}}
+        {{if.location2}}
+        <div>
+            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15508.060795636662!2d100.6238174!3d13.6568393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5f9deb123a95%3A0xa2081c0575ab1e0b!2sTora%20Yakiniku%20%26%20Cafe!5e0!3m2!1sen!2sth!4v1681009532419!5m2!1sen!2sth"></iframe></div>
+        </div>
+        {{end}}
+        {{if.location3}}
+        <div>
+            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15498.450033523364!2d100.6182466!3d13.8022173!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29d3d4c408db5%3A0x8fb8a24d237b9fbe!2sTora%20Yakiniku%20X%20Cafe!5e0!3m2!1sen!2sth!4v1681010126113!5m2!1sen!2sth"></iframe></div>
+        </div>
+        {{end}}
+    </div>
+</section>
+<!-- "map" section end -->
+{{end}}
+{{end}}
+
+{{end}}

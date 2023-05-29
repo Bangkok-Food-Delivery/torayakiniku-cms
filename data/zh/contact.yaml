@@ -1,0 +1,12 @@
+contact:
+  sm_text: 
+  title: 您的預約資訊
+  options:
+    - value: 1
+      name: Service 1
+    - value: 2
+      name: Service 2
+    - value: 3
+      name: Service 3
+    - value: 4
+      name: Service 4

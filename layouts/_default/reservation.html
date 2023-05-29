@@ -1,0 +1,153 @@
+{{ define "main"}}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.reservation.reservation }}
+<!-- page title start -->
+<section class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="jumbotron-title mb-0">{{ .title }}</h1>
+    </div>
+</section>
+<!-- page title end -->
+
+<!-- page content start -->
+<section class="section py-21">
+    <div class="section-content container">
+        <div class="row">
+            <div class="col-12 col-lg-8 mb-20 mb-lg-0">
+                <div class="form-collapsible-section mb-4" role="article" aria-expanded="true">
+                    <div class="form-collapsible-section-head">
+                        <span class="form-collapsible-section-number">1</span>
+                        <span class="form-collapsible-section-title">{{ i18n "CHOOSE_SERVICE_SECTION_TITLE" .}}</span>
+                        <span class="form-collapsible-section-toggle">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </span>
+                    </div>
+                    <div class="form-collapsible-section-body">
+                        {{ range .service_item }}
+                        <div class="form-selectable-label border-light" data-input="#radio-input-1">
+                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center py-5 px-14">
+                                <div class="mr-9 py-5">
+                                    <div class="fs-5 mb-2"><strong>{{ .title }}</strong></div>
+                                    <p class="mb-9 text-muted">{{ .description }}</p>
+                                </div>
+                                <!-- min-width is required for old IE browsers -->
+                                <div class="d-flex flex-wrap flex-md-nowrap align-items-center" style="min-width: 330px">
+                                    <div class="py-5">
+                                        <div class="radio-buttons-group mr-9">  
+                                        </div>
+                                    </div>
+                                    <div class="fs-5 py-5 d-flex">
+                                        <input type="radio" name="service" value="{{.value}}" class="custom-radio" checked
+                                               id="radio-input-{{.value}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {{end}}
+                        <div class="pb-19"></div>
+                    </div>
+                </div>
+                <div class="form-collapsible-section mb-4" role="article" aria-expanded="true">
+                    <div class="form-collapsible-section-head">
+                        <span class="form-collapsible-section-number">2</span>
+                        <span class="form-collapsible-section-title">{{ i18n "CHOOSE_DATE_SECTION_TITLE" .}}</span>
+                        <span class="form-collapsible-section-toggle">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </span>
+                    </div>
+                    <div class="form-collapsible-section-body">
+                        <div class="calendar"></div>
+                        <div class="row mt-12">
+                           
+                            <div class="col-12 col-sm mr-0 mr-md-9 mb-12 mb-sm-0">
+                                <div class="mb-7">{{ i18n "AFTERNOON"}}</div>
+                                {{ range .afternoon_timings }}
+                                <div class="form-selectable-label text-center time-slot mb-4" data-input="#time-slot-{{.value}}">
+                                    <label for="time-slot-{{.value}}" class="mb-0">{{.time}}</label>
+                                    <input class="sr-only" type="radio" name="time" id="time-slot-{{.value}}" value="{{.value}}"/>
+                                </div>
+                                {{ end }}
+                            </div>
+                            <div class="col-12 col-sm">
+                                <div class="mb-7">{{ i18n "EVENING"}}</div>
+                                {{ range .evening_timings }}
+                                <div class="form-selectable-label text-center time-slot mb-4" data-input="#time-slot-{{.value}}">
+                                    <label for="time-slot-{{.value}}" class="mb-0">{{.time}}</label>
+                                    <input class="sr-only" type="radio" name="time" id="time-slot-{{.value}}" value="{{.value}}"/>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <div class="pb-19"></div>
+                    </div>
+                </div>
+                <div class="form-collapsible-section mb-4" role="article" aria-expanded="true">
+                    <div class="form-collapsible-section-head">
+                        <span class="form-collapsible-section-number">3</span>
+                        <span class="form-collapsible-section-title">{{ i18n "ADD_INFORMATION_SECTION_TITLE" .}}</span>
+                        <span class="form-collapsible-section-toggle">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </span>
+                    </div>
+                    <div class="form-collapsible-section-body">
+                        <!-- <div class="form-group">
+                            <div class="form-label mb-6">Location</div>
+                            <div class="form-check form-check-inline">
+                                <input class="custom-radio" type="radio" id="location-checkbox-1" name="location"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="location-checkbox-1">My location</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="custom-radio" type="radio" id="location-checkbox-2" name="location"
+                                       value="option2">
+                                <label class="form-check-label" for="location-checkbox-2">At your location</label>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mb-5">
+                                    <label for="full_name" class="form-label">{{ i18n "BOOKING_FORM_FIELD_FULL_NAME" . }}</label>
+                                    <input type="text" class="form-control" id="full_name"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mb-5">
+                                    <label for="Number of people" class="form-label">{{ i18n "BOOKING_FORM_FIELD_NUMBER_OF_PEOPLE" . }}</label>
+                                    <input type="text" class="form-control" id="Number of people"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mb-5">
+                                    <label for="phone" class="form-label">{{ i18n "BOOKING_FORM_FIELD_PHONE" . }}</label>
+                                    <input type="text" class="form-control" id="phone"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mb-5">
+                                    <label for="email" class="form-label">{{ i18n "BOOKING_FORM_FIELD_EMAIL" . }}</label>
+                                    <input type="text" class="form-control" id="email"/>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group mb-0">
+                                    <label for="message" class="form-label">{{ i18n "BOOKING_FORM_FIELD_REQUIREMENTS" . }}</label>
+                                    <textarea id="requirements" class="form-control" rows="4" placeholder='{{ i18n "BOOKING_FORM_FIELD_REQUIREMENTS_PLACEHOLDER" }}'></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-19"></div>
+                        <div class="form-group mb-0">
+                            <input type="button" class="btn btn-primary btn-lg" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" }}'>
+                        </div>
+                    </div>  
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- page content end -->
+{{end}}
+{{end}}

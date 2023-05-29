@@ -1,0 +1,88 @@
+{{ define "main"}}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.contact.contact }}
+<!-- "contacts" section start -->
+<section id="contacts">
+    <div class="section bg-secondary">
+        <div class="section-content container">
+            <div class="text-center">
+                <small class="fs-1 font-family-secondary text-uppercase font-weight-bold letter-spacing-caption text-muted">
+                    {{.sm_text}}
+                </small>
+                <h2>{{.title}}</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <form action="https://formspree.io/f/xnqywypa" method="POST" class="row mt-17">
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="first_name" class="form-label">{{ i18n "CONTACT_FORM_FIELD_FIRST_NAME" . }}</label>
+                                <input type="text" class="form-control" id="first_name"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="last_name" class="form-label">{{ i18n "CONTACT_FORM_FIELD_LAST_NAME" . }}</label>
+                                <input type="text" class="form-control" name="last name" id="last_name"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="phone" class="form-label">{{ i18n "CONTACT_FORM_FIELD_PHONE" . }}</label>
+                                <input type="text" class="form-control" name="Phone Number" id="phone"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="email" class="form-label">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
+                                <input type="text" class="form-control" name="Email" id="email"/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="message" class="form-label">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
+                                <textarea id="message" class="form-control" name="Message" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-between align-items-center flex-column flex-md-row">
+                            
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn btn-primary btn-lg">{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" }}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}
+<!-- "contacts" section end -->
+
+{{ with .Params.faq }}
+{{if.enable}}
+<!-- "frequently asked questions" section start -->
+<section class="section" id="faq">
+    <div class="section-content container">
+        <h2 class="mb-17 text-center">{{ .title }}</h2>
+        {{ range .faq_items }}
+        <article class="faq {{ .open }}">
+            <header class="faq-header" data-toggle="collapse" data-target="#{{ .id }}" aria-expanded="true">
+                <h1 class="faq-title">{{ .question }}</h1>
+                <div class="faq-toggle">
+                    <i class="material-icons faq-toggle-closed">add</i>
+                    <i class="material-icons faq-toggle-open">remove</i>
+                </div>
+            </header>
+            <div class="faq-body collapse {{ .show }}" id="{{ .id }}">
+                <p>{{ .answer }}</p>
+            </div>
+        </article>
+        {{end}}
+    </div>
+</section>
+<!-- "frequently asked questions" section end -->
+{{end}}
+{{end}}
+
+{{end}}

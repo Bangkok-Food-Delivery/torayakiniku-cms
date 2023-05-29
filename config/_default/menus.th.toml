@@ -1,0 +1,56 @@
+# main menu
+[[main]]
+name = "กลับหน้าหลัก"
+url = "/"
+weight = 1
+
+[[main]]
+name = "เกี่ยวกับเรา"
+url = "about/"
+weight = 2
+
+# [[main]]
+# name = "เมนู"
+# url = "menu/"
+# weight = 2
+
+[[main]]
+name = "โปรโมชั่น"
+url = "promotions/"
+weight = 3
+
+[[main]]
+name = "ข่าวสาร"
+url = "events/"
+weight = 4
+
+[[main]]
+identifier = "branches"
+name = "สาขา"
+url = "#"
+weight = 5
+
+[[main]]
+name = "เดอะ ซิตี้ คอนเน็ค"
+url = "city-connect/"
+parent = "branches"
+weight = 1
+
+[[main]]
+name = "ลาซาล อเวนิว"
+url = "lasalle-avenue/"
+parent = "branches"
+weight = 2
+
+[[main]]
+name = "คริสตัล ดีไซน์ เซ็นเตอร์"
+url = "crystal-design-center/"
+parent = "branches"
+weight = 3
+
+[[main]]
+name = "จองล่วงหน้า"
+identifier = "reservations"
+url = "contact/"
+weight = 6
+

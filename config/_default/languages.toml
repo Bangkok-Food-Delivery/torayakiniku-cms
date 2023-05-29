@@ -1,0 +1,40 @@
+############################# English ############################
+[en]
+languageName = "EN"
+flag = "/assets/img/language-eng.png"
+title = "Tora"
+contentDir = "content/english" # content/english
+weight = 1
+###########  content ##########
+footer_content = " "
+head_btn = "Order Now"
+head_link = "https://tora.foodie-delivery.com/#/home"
+logo_link = "/"
+
+#############################   Thai  ############################
+[th]
+languageName = "ไทย"
+flag = "/assets/img/language-th.png"
+title = "Tora"
+contentDir = "content/thai" # content/german
+weight = 2
+###########  content ##########
+footer_content = ""
+head_btn = "สั่งซื้อตอนนี้"
+head_link = "https://tora.foodie-delivery.com/#/home"
+logo_link = "/th"
+
+#############################   Chinese  ############################
+[zh]
+languageName = "中国人"
+flag = "/assets/img/language-zh.png"
+title = "Tora"
+contentDir = "content/chinese" # content/chinese
+weight = 3
+###########  content ##########
+footer_content = " "
+head_btn = "现在下单"
+head_link = "https://tora.foodie-delivery.com/#/home"
+logo_link = "/zh"
+
+

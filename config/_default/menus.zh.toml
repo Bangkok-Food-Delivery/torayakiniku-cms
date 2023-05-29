@@ -1,0 +1,57 @@
+# main menu
+[[main]]
+name = "主页"
+url = "/"
+weight = 1
+
+[[main]]
+name = "关于我们"
+url = "about/"
+weight = 2
+
+
+# [[main]]
+# name = "Menu"
+# url = "menu/"
+# weight = 2
+
+[[main]]
+name = "促销活动"
+url = "promotions/"
+weight = 3
+
+[[main]]
+name = "活动"
+url = "events/"
+weight = 4
+
+[[main]]
+identifier = "branches"
+name = "分店"
+url = "#"
+weight = 5
+
+[[main]]
+name = "THE CITY CONNECT"
+url = "city-connect/"
+parent = "branches"
+weight = 1
+
+[[main]]
+name = "LASELLE'S AVENUE"
+url = "lasalle-avenue/"
+parent = "branches"
+weight = 2
+
+[[main]]
+name = "CRYSTAL DESIGN CENTER"
+url = "crystal-design-center/"
+parent = "branches"
+weight = 3
+
+[[main]]
+name = "预定"
+identifier = "reservations"
+url = "contact/"
+weight = 6
+
